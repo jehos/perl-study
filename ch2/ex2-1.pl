@@ -24,7 +24,11 @@ use warnings;
 
 use Math::Trig ':pi';
 
-my $radius = 12.5;
+print "반지름을 입력하세요 : ";
+my $radius = <STDIN>;
+if ( $radius < 0) {
+	$radius = 0;
+}
 say my $circumference = 2*(pi) * $radius;
 
 =over
