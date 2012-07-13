@@ -33,3 +33,11 @@ sub total {
 	}
 	return $result;
 }
+
+=head1 ch4-2, 연습문제
+
+이전 연습문제의 사용자 함수를 이용해서 숫자 1부터 1000까지 합을 계산하라
+
+=cut
+
+say total(1..1000);
