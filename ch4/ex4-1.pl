@@ -41,3 +41,35 @@ sub total {
 =cut
 
 say total(1..1000);
+
+=head1 ch4-3, 연습문제
+
+숫자 목록을 인자로 받아서, 평균값보다 큰 값들을 반환하는
+&above_average 사용자 함수를 작성하세요.
+
+(도움말: 숫자의 합을 숫자의 개수로 나누어서 평균값을 구하는
+또다른 사용자 함수를 만드세요)
+
+다음의 검사 프로그램을 이용해서 여러분이 만든 사용자 함수를 점검하세요
+
+=cut
+
+@fred = above_average(1..10);
+say "\@fred is @fred";
+say "(Should be 6 7 8 9 10)";
+
+my @barney = above_average(100, 1..10);
+say "\@barney is @barney";
+say "(Should be just 100)";
+
+sub above_average {
+	my $avr = total(@_) / scalar @_;
+	my @result;
+	foreach (@_){
+		if ($_ > $avr){
+			push @result, $_;
+		}
+	}
+	return @result;
+}
+
